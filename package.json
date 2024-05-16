@@ -14,7 +14,7 @@
     "build:plugin-dingflow": "turbo build --filter=@nop-chaos/plugin-dingflow",
     "build:plugin-amis": "turbo build --filter=@nop-chaos/plugin-amis",
     "dev": "turbo run dev --parallel",
-    "nop-dingflow": "turbo run dev --filter=dingflow-demo",
+    "nop-dingflow": "turbo run dev --filter=dingflow-playgroud",
     "lint": "turbo run lint",
     "test": "vitest",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -33,7 +33,7 @@
   },
   "keywords": [],
   "dependencies": {
-    
+
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",

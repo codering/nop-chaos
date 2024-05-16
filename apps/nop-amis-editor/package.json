@@ -1,6 +1,6 @@
 {
   "name": "@nop-chaos/nop-amis-editor",
-  "version": "0.1.0",  
+  "version": "0.1.0",
   "private": true,
   "type":"module",
   "scripts": {
@@ -43,8 +43,8 @@
     "@vitejs/plugin-react": "^3.0.0",
     "vite-plugin-compression":"^0.5.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8",
-    "vue-tsc": "^1.8.25",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6",
     "vite-plugin-dts": "^3.7.2"
   },
   "eslintConfig": {
