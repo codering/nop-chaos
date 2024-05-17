@@ -32,7 +32,7 @@ export function createEnv(page: PageObject): RenderOptions {
     affixOffsetTop: 0,
 
     fetcher:(options)=>{
-      providePage(page)
+      providePage(page);
       (options as any)._page = page
       return ajaxFetch(options) as any
     },
