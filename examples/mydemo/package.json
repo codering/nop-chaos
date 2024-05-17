@@ -1,0 +1,32 @@
+{
+  "name": "mydemo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nop-chaos/sdk": "workspace:*",
+    "@nop-chaos/plugin-amis": "workspace:*",
+    "vue": "^3.4.21",
+    "amis": "^6.4.1",
+    "amis-core": "^6.4.1",
+    "amis-formula": "^6.4.1",
+    "amis-ui": "^6.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "veaury": "^2.3.12",
+    "vue-router": "^4.2.4",
+    "lodash-es": "^4.17.12",
+    "@fortawesome/fontawesome-free": "^6.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  }
+}

@@ -591,6 +591,61 @@ importers:
         specifier: ^2.0.6
         version: 2.0.17(typescript@5.3.3)
 
+  examples/mydemo:
+    dependencies:
+      '@fortawesome/fontawesome-free':
+        specifier: ^6.5.1
+        version: 6.5.1
+      '@nop-chaos/plugin-amis':
+        specifier: workspace:*
+        version: link:../../plugins/plugin-amis
+      '@nop-chaos/sdk':
+        specifier: workspace:*
+        version: link:../../packages/sdk
+      amis:
+        specifier: ^6.4.1
+        version: 6.4.1(@types/react@18.2.22)(amis-core@6.4.1)(amis-ui@6.4.1)(office-viewer@0.2.1)(react-dom@18.2.0)(react@18.2.0)
+      amis-core:
+        specifier: ^6.4.1
+        version: 6.4.1(@types/react@18.2.22)(amis-formula@6.4.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+      amis-formula:
+        specifier: ^6.4.1
+        version: 6.4.1
+      amis-ui:
+        specifier: ^6.4.1
+        version: 6.4.1(@types/react@18.2.22)(amis-core@6.4.1)(amis-formula@6.4.1)(react-dom@18.2.0)(react@18.2.0)
+      lodash-es:
+        specifier: ^4.17.12
+        version: 4.17.21
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      veaury:
+        specifier: ^2.3.12
+        version: 2.3.12(react-dom@18.2.0)(react@18.2.0)
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.27(typescript@5.3.3)
+      vue-router:
+        specifier: ^4.2.4
+        version: 4.2.4(vue@3.4.27)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.4
+        version: 5.0.4(vite@5.2.11)(vue@3.4.27)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.3.3
+      vite:
+        specifier: ^5.2.0
+        version: 5.2.11(@types/node@18.11.13)(less@4.2.0)(sass@1.69.7)
+      vue-tsc:
+        specifier: ^2.0.6
+        version: 2.0.17(typescript@5.3.3)
+
   examples/vue-playgroud:
     dependencies:
       vue:

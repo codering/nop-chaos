@@ -15,6 +15,7 @@
     "build:plugin-amis": "turbo build --filter=@nop-chaos/plugin-amis",
     "dev": "turbo run dev --parallel",
     "nop-dingflow": "turbo run dev --filter=dingflow-playgroud",
+    "mydemo": "turbo run dev --filter=mydemo",
     "lint": "turbo run lint",
     "test": "vitest",
     "clean": "turbo run clean && rm -rf node_modules",
