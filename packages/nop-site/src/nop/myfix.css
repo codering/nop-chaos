@@ -1,0 +1,23 @@
+
+/******** 部门页面样式调整 ********/
+/**
+* fix 树形表格展开后最后一个节点（一行）样式偏移
+*/
+.cxd-Table-primayCell .cxd-Form-static {
+    display: inline-block;
+}
+
+/******** 用户页面样式调整 user-aside-tree 是在page.yaml中自定义的类名 ********/
+/* aside 宽度设置 */
+.user-aside-tree {
+  width: 14rem;
+}
+/* tree 设置 paddingTop */
+.user-aside-tree .cxd-Form {
+  padding-top: var(--Page-body-padding);
+}
+/* 去除 input-tree 边框 */
+.user-aside-tree .cxd-TreeControl {
+  border: none
+}
+
