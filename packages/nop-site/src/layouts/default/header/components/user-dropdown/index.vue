@@ -11,11 +11,11 @@
 
     <template #overlay>
       <Menu @click="handleMenuClick">
-        <MenuItem key="doc" :text="t('layout.header.dropdownItemDoc')" icon="ion:document-text-outline" v-if="getShowDoc" />
-        <MenuDivider v-if="getShowDoc" />
-        <!-- <MenuItem key="account" :text="t('layout.header.dropdownItemSwitchAccount')" icon="ant-design:setting-outlined" /> -->
-        <!-- <MenuItem key="password" :text="t('layout.header.dropdownItemSwitchPassword')" icon="ant-design:edit-outlined" /> -->
+        <MenuDivider />
+        <MenuItem key="account" :text="t('layout.header.dropdownItemSwitchAccount')" icon="ant-design:setting-outlined" />
+        <MenuItem key="password" :text="t('layout.header.dropdownItemSwitchPassword')" icon="ant-design:edit-outlined" />
         <!-- <MenuItem key="depart" :text="t('layout.header.dropdownItemSwitchDepart')" icon="ant-design:cluster-outlined" /> -->
+        <MenuDivider />
         <MenuItem key="cache" :text="t('layout.header.dropdownItemRefreshCache')" icon="ion:sync-outline" />
         <!-- <MenuItem
             v-if="getUseLockPage"
@@ -56,7 +56,7 @@
   // import { DB_DICT_DATA_KEY } from '/src/enums/cacheEnum';
   // import { removeAuthCache, setAuthCache } from '/src/utils/auth';
   import { getFileAccessHttpUrl } from '/@/utils/common/compUtils';
-import { PageApis, clearLocalCache } from '@nop-chaos/sdk';
+  import { PageApis, clearLocalCache } from '@nop-chaos/sdk';
 
   type MenuEvent = 'logout' | 'doc' | 'lock' | 'cache' | 'depart';
   const { createMessage } = useMessage();
