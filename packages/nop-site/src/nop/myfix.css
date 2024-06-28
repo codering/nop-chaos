@@ -10,7 +10,7 @@
 /******** 用户页面样式调整 user-aside-tree 是在page.yaml中自定义的类名 ********/
 /* aside 宽度设置 */
 .user-aside-tree {
-  width: 14rem;
+  /* width: 14rem; */
 }
 /* tree 设置 paddingTop */
 .user-aside-tree .cxd-Form {
