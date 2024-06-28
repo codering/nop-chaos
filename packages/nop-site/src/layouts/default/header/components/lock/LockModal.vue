@@ -42,7 +42,7 @@
       const [register, { closeModal }] = useModalInner();
 
       const [registerForm, { validateFields, resetFields }] = useForm({
-        labelWidth: 100,
+        labelWidth: 160,
         showActionButtonGroup: false,
         schemas: [
           {

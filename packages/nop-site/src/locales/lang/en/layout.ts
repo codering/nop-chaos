@@ -4,8 +4,10 @@ export default {
     // user dropdown
     dropdownItemDoc: 'Document',
     dropdownItemLoginOut: 'Login Out',
+    dropdownItemSwitchPassword: 'Change Password',
     dropdownItemSwitchDepart: 'Switch Department',
     dropdownItemRefreshCache: 'Clean cache',
+    dropdownItemSwitchAccount: 'Account Setting',
 
     tooltipErrorLog: 'Error log',
     tooltipLock: 'Lock screen',
