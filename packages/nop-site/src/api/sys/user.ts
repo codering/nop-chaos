@@ -4,10 +4,7 @@ import { useMessage } from '/@/hooks/web/useMessage';
 import { ajaxRequest } from '@nop-chaos/sdk';
 import { getToken } from '/@/utils/auth';
 
-
-let defHttp:any = {
-  
-}
+let defHttp: any = {};
 
 const { createErrorModal } = useMessage();
 enum Api {
@@ -44,14 +41,13 @@ enum Api {
   getQrcodeToken = '/sys/getQrcodeToken',
 }
 
-
 /**
  * @description: user login api
  */
 export function loginApi(params: LoginParams, mode: ErrorMessageMode = 'modal') {
   if (import.meta.env.VITE_USE_MOCK) {
-    const mockLogin = import("../../../public/mock/login-result.json").then(d => d.default)
-    return mockLogin
+    const mockLogin = import('../../../public/mock/login-result.json').then((d) => d.default);
+    return mockLogin;
   }
 
   return ajaxRequest({
@@ -61,11 +57,11 @@ export function loginApi(params: LoginParams, mode: ErrorMessageMode = 'modal') 
       principalId: params.username,
       principalSecret: params.password,
       verifyCode: (params as any).captcha,
-      verifySecret: (params as any).checkKey
-    },  
-     // 登录页面发现异常时会自己弹出错误提示信息，这里禁用ajaxRequest内部的提示框
-    silent: true
-  })
+      verifySecret: (params as any).checkKey,
+    },
+    // 登录页面发现异常时会自己弹出错误提示信息，这里禁用ajaxRequest内部的提示框
+    silent: true,
+  });
   // .then(data => {
   //   return {
   //     token: data.accessToken,
@@ -97,27 +93,29 @@ export function phoneLoginApi(params: LoginParams, mode: ErrorMessageMode = 'mod
  */
 export function getUserInfo() {
   if (import.meta.env.VITE_USE_MOCK) {
-    const mockUser = import("../../../public/mock/user-info.json").then(d => d.default)
-    return mockUser
+    const mockUser = import('../../../public/mock/user-info.json').then((d) => d.default);
+    return mockUser;
   }
 
   return ajaxRequest({
     url: '@query:LoginApi__getLoginUserInfo/username:userName,realname:nickName',
     data: {
-      accessToken: getToken()
-    }
-  })
+      accessToken: getToken(),
+    },
+  }).then((userInfo) => {
+    return { userInfo };
+  });
 }
 
 export function getPermCode() {
   if (import.meta.env.VITE_USE_MOCK) {
-    const mockUser = import("../../../public/mock/get-permission-result.json").then(d => d.default)
-    return mockUser
+    const mockUser = import('../../../public/mock/get-permission-result.json').then((d) => d.default);
+    return mockUser;
   }
 
   return Promise.resolve({
-    "codeList": [],
-    "authList": []
+    codeList: [],
+    authList: [],
   });
 }
 
@@ -125,9 +123,9 @@ export function doLogout() {
   return ajaxRequest({
     url: '@mutation:LoginApi__logout',
     data: {
-      accessToken: getToken()
-    }
-  })
+      accessToken: getToken(),
+    },
+  });
 }
 
 export function getCodeInfo(currdatetime) {
@@ -135,9 +133,9 @@ export function getCodeInfo(currdatetime) {
     url: '/r/LoginApi__generateVerifyCode',
     method: 'get',
     data: {
-      verifySecret: currdatetime
-    }
-  })
+      verifySecret: currdatetime,
+    },
+  });
 }
 /**
  * @description: 获取短信验证码
