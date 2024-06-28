@@ -103,7 +103,7 @@ export function getUserInfo() {
       accessToken: getToken(),
     },
   }).then((userInfo) => {
-    return { userInfo: { appLogo: '', appName: '管理平台', ...userInfo } };
+    return { userInfo: { appLogo: '', appName: 'EverCore Platform', ...userInfo } };
   });
 }
 

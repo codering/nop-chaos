@@ -6,7 +6,7 @@
   <div class="anticon" :class="getAppLogoClass" @click="goHome">
     <img :src="getUserInfo.appLogo" v-if="getUserInfo.appLogo" />
     <div class="ml-2 truncate md:opacity-100" :class="getTitleClass" v-show="showTitle">
-      {{ getUserInfo.appName }}
+      {{ getUserInfo.appName || 'EverCore Platform' }}
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@
 
   const getUserInfo = computed(() => {
     const { appLogo, appName } = userStore.getUserInfo || {};
-    return { appLogo, appName };
+    return { appLogo, appName};
   });
 
   function goHome() {
