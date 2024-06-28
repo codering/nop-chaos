@@ -4,15 +4,14 @@
 -->
 <template>
   <div class="anticon" :class="getAppLogoClass" @click="goHome">
-    <img src="/resource/img/logo.png" />
+    <img :src="getUserInfo.appLogo" v-if="getUserInfo.appLogo" />
     <div class="ml-2 truncate md:opacity-100" :class="getTitleClass" v-show="showTitle">
-      {{ title }}
+      {{ getUserInfo.appName }}
     </div>
   </div>
 </template>
 <script lang="ts" setup>
   import { computed, unref } from 'vue';
-  import { useGlobSetting } from '/@/hooks/setting';
   import { useGo } from '/@/hooks/web/usePage';
   import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
   import { useDesign } from '/@/hooks/web/useDesign';
@@ -37,7 +36,6 @@
   const { prefixCls } = useDesign('app-logo');
   const { getCollapsedShowTitle } = useMenuSetting();
   const userStore = useUserStore();
-  const { title } = useGlobSetting();
   const go = useGo();
 
   const getAppLogoClass = computed(() => [prefixCls, props.theme, { 'collapsed-show-title': unref(getCollapsedShowTitle) }]);
@@ -48,6 +46,11 @@
       'xs:opacity-0': !props.alwaysShowTitle,
     },
   ]);
+
+  const getUserInfo = computed(() => {
+    const { appLogo, appName } = userStore.getUserInfo || {};
+    return { appLogo, appName };
+  });
 
   function goHome() {
     go(userStore.getUserInfo.homePath || PageEnum.BASE_HOME);
