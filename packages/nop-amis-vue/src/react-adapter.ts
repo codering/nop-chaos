@@ -68,7 +68,7 @@ export function defineReactPageComponent(builder: (props: {actions?:Record<strin
                     width: '100%',
                     height: '100%'
                 },
-                class: 'nop-page'
+                class: 'nop-page text-ellipsis'
             });
         }
     });
