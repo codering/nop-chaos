@@ -8,7 +8,7 @@ export default {
     apiRequestFailed: 'The interface request failed, please try again later!',
     networkException: 'network anomaly',
     networkExceptionMsg: 'Please check if your network connection is normal! The network is abnormal',
-    downloading: "Start Downloading",
+    downloading: 'Start Downloading',
 
     errMsg401: 'The user does not have permission (token, user name, password error)!',
     errMsg403: 'The user is authorized, but access is forbidden!',
@@ -70,8 +70,8 @@ export default {
     signUpFormTitle: 'Sign up',
     forgetFormTitle: 'Reset password',
 
-    signInTitle: 'Nop Platform 2.0',
-    signInDesc: 'a low-code platform built from scratch based on the theory of reversible computation and designed specifically for DSL development.',
+    signInTitle: 'Intelligent management platform',
+    signInDesc: '',
     policy: 'I agree to the xxx Privacy Policy',
     scanSign: `scanning the code to complete the login`,
 
