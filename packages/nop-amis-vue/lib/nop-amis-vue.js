@@ -1,5 +1,5 @@
 import * as Vue from "vue";
-import { defineComponent, ref, onUnmounted, openBlock, createElementBlock, watchEffect, onBeforeUnmount, h, onMounted, createStaticVNode, shallowRef, markRaw, Fragment as Fragment$1, createBlock, resolveDynamicComponent, mergeProps, createCommentVNode, unref, withCtx, createVNode, createElementVNode, createTextVNode, normalizeProps, guardReactiveProps, resolveComponent } from "vue";
+import { defineComponent, ref, onUnmounted, openBlock, createElementBlock, watchEffect, onBeforeUnmount, h, onMounted, pushScopeId, popScopeId, createElementVNode, shallowRef, markRaw, Fragment as Fragment$1, createBlock, resolveDynamicComponent, mergeProps, createCommentVNode, unref, withCtx, createVNode, createTextVNode, normalizeProps, guardReactiveProps, resolveComponent } from "vue";
 import { ajaxFetch, useDebug, useAdapter, providePage, default_jumpTo, isCancel, default_isCurrentUrl, default_updateLocation, createPage, transformPageJson, bindActions, getSchemaProcessorType, deletePageCache, PageApis, registerAdapter, registerModule } from "@nop-chaos/nop-core";
 import { isString, cloneDeep } from "lodash-es";
 import { toast, clearStoresCache, setDefaultLocale, render, ToastComponent, ScopedContext, Renderer, FormItem, dataMapping, alert, confirm } from "amis";
@@ -235,7 +235,7 @@ function defineReactPageComponent(builder) {
           width: "100%",
           height: "100%"
         },
-        class: "nop-page"
+        class: "nop-page text-ellipsis"
       });
     }
   });
@@ -389,18 +389,28 @@ const debuggerSchema = {
     ]
   }
 };
-const _imports_0 = "/resource/img/logo.png";
-const XuiLoading_vue_vue_type_style_index_0_scoped_2668f673_lang = "";
+const XuiLoading_vue_vue_type_style_index_0_scoped_b4281db1_lang = "";
 const _sfc_main$5 = {};
+const _withScopeId = (n) => (pushScopeId("data-v-b4281db1"), n = n(), popScopeId(), n);
 const _hoisted_1$2 = { class: "app-loading" };
-const _hoisted_2 = /* @__PURE__ */ createStaticVNode('<div class="app-loading-wrap" data-v-2668f673><img src="' + _imports_0 + '" class="app-loading-logo" alt="Logo" data-v-2668f673><div class="app-loading-dots" data-v-2668f673><span class="dot dot-spin" data-v-2668f673><i data-v-2668f673></i><i data-v-2668f673></i><i data-v-2668f673></i><i data-v-2668f673></i></span></div><div class="app-loading-title" data-v-2668f673><b data-v-2668f673>N</b>op is n<b data-v-2668f673>o</b>t <b data-v-2668f673>P</b>rogramming </div></div>', 1);
+const _hoisted_2 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "app-loading-wrap" }, [
+  /* @__PURE__ */ createElementVNode("div", { class: "app-loading-dots" }, [
+    /* @__PURE__ */ createElementVNode("span", { class: "dot dot-spin" }, [
+      /* @__PURE__ */ createElementVNode("i"),
+      /* @__PURE__ */ createElementVNode("i"),
+      /* @__PURE__ */ createElementVNode("i"),
+      /* @__PURE__ */ createElementVNode("i")
+    ])
+  ]),
+  /* @__PURE__ */ createElementVNode("div", { class: "app-loading-title" })
+], -1));
 const _hoisted_3 = [
   _hoisted_2
 ];
 function _sfc_render$2(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$2, _hoisted_3);
 }
-const XuiLoading = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-2668f673"]]);
+const XuiLoading = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-b4281db1"]]);
 const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   __name: "XuiPageEditor",
   props: {
