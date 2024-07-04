@@ -32,13 +32,13 @@
 
       <FullScreen v-if="getShowFullScreen" :class="`${prefixCls}-action__item fullscreen-item`" />
 
-      <LockScreen v-if="getUseLockPage" />
+      <!-- <LockScreen v-if="getUseLockPage" /> -->
 
       <AppLocalePicker v-if="getShowLocalePicker" :reload="true" :showText="false" :class="`${prefixCls}-action__item`" />
 
       <UserDropDown :theme="getHeaderTheme" />
 
-      <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" />
+      <!-- <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" /> -->
     </div>
   </Header>
   <LoginSelect ref="loginSelectRef" @success="loginSelectOk"></LoginSelect>
@@ -89,11 +89,11 @@
      // Notify,
      // AppSearch,
      // ErrorAction,
-      LockScreen,
+      // LockScreen,
       LoginSelect,
-      SettingDrawer: createAsyncComponent(() => import('/@/layouts/default/setting/index.vue'), {
-        loading: true,
-      }),
+      // SettingDrawer: createAsyncComponent(() => import('/@/layouts/default/setting/index.vue'), {
+      //   loading: true,
+      // }),
     },
     props: {
       fixed: propTypes.bool,

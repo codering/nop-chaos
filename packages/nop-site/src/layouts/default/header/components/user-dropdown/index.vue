@@ -27,7 +27,7 @@
       </Menu>
     </template>
   </Dropdown>
-  <LockAction @register="register" />
+  <!-- <LockAction @register="register" /> -->
   <!-- <DepartSelect ref="loginSelectRef" />
   <UpdatePassword ref="updatePasswordRef" /> -->
 </template>
@@ -67,7 +67,7 @@
       Menu,
       MenuItem: createAsyncComponent(() => import('./DropMenuItem.vue')),
       MenuDivider: Menu.Divider,
-      LockAction: createAsyncComponent(() => import('../lock/LockModal.vue')),
+      // LockAction: createAsyncComponent(() => import('../lock/LockModal.vue')),
       // DepartSelect: createAsyncComponent(() => import('./DepartSelect.vue')),
       // UpdatePassword: createAsyncComponent(() => import('./UpdatePassword.vue')),
     },

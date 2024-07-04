@@ -54,7 +54,7 @@ import {
   Rate,
 } from 'ant-design-vue';
 
-const compList = [AntButton.Group, Icon, AIcon];//, JUploadButton];
+const compList = [AntButton.Group, Icon, AIcon]; //, JUploadButton];
 
 export function registerGlobComp(app: App) {
   compList.forEach((comp) => {
@@ -67,16 +67,16 @@ export function registerGlobComp(app: App) {
     .use(Button)
     .use(Breadcrumb)
     .use(Checkbox)
-   // .use(DatePicker)
-   // .use(TimePicker)
-   // .use(Calendar)
+    // .use(DatePicker)
+    // .use(TimePicker)
+    // .use(Calendar)
     .use(Radio)
     .use(Switch)
     .use(Card)
     .use(List)
     .use(Descriptions)
-   // .use(Tree)
-   // .use(TreeSelect)
+    // .use(Tree)
+    // .use(TreeSelect)
     .use(Table)
     .use(Divider)
     .use(Modal)
@@ -86,7 +86,7 @@ export function registerGlobComp(app: App) {
     .use(Tooltip)
     .use(Badge)
     .use(Popover)
-  //  .use(Upload)
+    //  .use(Upload)
     .use(Transfer)
     .use(Steps)
     .use(PageHeader)
