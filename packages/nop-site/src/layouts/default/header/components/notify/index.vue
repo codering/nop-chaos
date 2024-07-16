@@ -4,10 +4,10 @@
       <BellOutlined />
     </Badge>
 
-    <DynamicNotice ref="dynamicNoticeRef" v-bind="dynamicNoticeProps" />
-    <DetailModal @register="registerDetail" />
+    <!-- <DynamicNotice ref="dynamicNoticeRef" v-bind="dynamicNoticeProps" /> -->
+    <!-- <DetailModal @register="registerDetail" /> -->
 
-    <sys-message-modal @register="registerMessageModal" @refresh="reloadCount"></sys-message-modal>
+    <!-- <sys-message-modal @register="registerMessageModal" @refresh="reloadCount"></sys-message-modal> -->
   </div>
 </template>
 <script lang="ts">
@@ -17,18 +17,18 @@
   import { tabListData } from './data';
   import { listCementByUser, editCementSend } from './notify.api';
   import NoticeList from './NoticeList.vue';
-  import DetailModal from '/@/views/monitor/mynews/DetailModal.vue';
-  import DynamicNotice from '/@/views/monitor/mynews/DynamicNotice.vue';
+  // import DetailModal from '/@/views/monitor/mynews/DetailModal.vue';
+  // import DynamicNotice from '/@/views/monitor/mynews/DynamicNotice.vue';
   import { useModal } from '/@/components/Modal';
   import { useDesign } from '/@/hooks/web/useDesign';
   import { useGlobSetting } from '/@/hooks/setting';
   import { useUserStore } from '/@/store/modules/user';
   import { connectWebSocket, onWebSocket } from '/@/hooks/web/useWebSocket';
-  import { readAllMsg } from '/@/views/monitor/mynews/mynews.api';
+  // import { readAllMsg } from '/@/views/monitor/mynews/mynews.api';
   import { getToken } from '/@/utils/auth';
   import md5 from 'crypto-js/md5';
 
-  import SysMessageModal from '/@/views/system/message/components/SysMessageModal.vue'
+  // import SysMessageModal from '/@/views/system/message/components/SysMessageModal.vue';
   
   export default defineComponent({
     components: {
@@ -38,9 +38,9 @@
       TabPane: Tabs.TabPane,
       Badge,
       NoticeList,
-      DetailModal,
-      DynamicNotice,
-      SysMessageModal,
+      // DetailModal,
+      // DynamicNotice,
+      // SysMessageModal,
     },
     setup() {
       const { prefixCls } = useDesign('header-notify');
@@ -149,10 +149,10 @@
       }
 
       // 清空消息
-      function onEmptyNotify() {
-        popoverVisible.value = false;
-        readAllMsg({}, loadData);
-      }
+      // function onEmptyNotify() {
+      //   popoverVisible.value = false;
+      //   readAllMsg({}, loadData);
+      // }
       async function reloadCount(id){
         try {
           await editCementSend(id);
@@ -171,7 +171,7 @@
         registerMessageModal,
         reloadCount,
         onNoticeClick,
-        onEmptyNotify,
+        // onEmptyNotify,
         numberStyle: {},
         popoverVisible,
         registerDetail,

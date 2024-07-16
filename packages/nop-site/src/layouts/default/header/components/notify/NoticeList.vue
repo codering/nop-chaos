@@ -51,7 +51,7 @@
                 />
               </div>
               <div class="datetime">
-                <Time :value="item.datetime" :title="item.datetime" />
+                <!-- <Time :value="item.datetime" :title="item.datetime" /> -->
               </div>
             </div>
           </template>
@@ -65,7 +65,7 @@
   import { PriorityTypes, ListItem } from './data';
   import { useDesign } from '/@/hooks/web/useDesign';
   import { List, Avatar, Tag, Typography } from 'ant-design-vue';
-  import { Time } from '/@/components/Time';
+  // import { Time } from '/@/components/Time';
   import { isNumber } from '/@/utils/is';
   export default defineComponent({
     components: {
@@ -75,7 +75,7 @@
       AListItemMeta: List.Item.Meta,
       ATypographyParagraph: Typography.Paragraph,
       [Tag.name]: Tag,
-      Time,
+      // Time,
     },
     props: {
       list: {

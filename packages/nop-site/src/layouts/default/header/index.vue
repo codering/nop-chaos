@@ -63,17 +63,17 @@
   import { SettingButtonPositionEnum } from '/@/enums/appEnum';
   import { AppLocalePicker } from '/@/components/Application';
 
-  import { UserDropDown, LayoutBreadcrumb, FullScreen, LockScreen } from './components';
+  import { UserDropDown, LayoutBreadcrumb, FullScreen } from './components';
   import { useAppInject } from '/@/hooks/web/useAppInject';
   import { useDesign } from '/@/hooks/web/useDesign';
 
-  import { createAsyncComponent } from '/@/utils/factory/createAsyncComponent';
+  // import { createAsyncComponent } from '/@/utils/factory/createAsyncComponent';
   import { useLocale } from '/@/locales/useLocale';
 
   import LoginSelect from '/@/views/sys/login/LoginSelect.vue';
   import { useUserStore } from '/@/store/modules/user';
 
-  import {useDebug} from '@nop-chaos/sdk'
+  import {useDebug} from '@nop-chaos/sdk';
 
   export default defineComponent({
     name: 'LayoutHeader',
