@@ -28,7 +28,11 @@ export function useTitle() {
       }
       const { appName } = userStore.getUserInfo;
       const tTitle = t(route?.meta?.title as string);
-      pageTitle.value = tTitle ? ` ${tTitle} - ${appName} ` : `${appName}`;
+      if (tTitle) {
+        pageTitle.value = appName ? `${tTitle}-${appName}` : tTitle;
+      } else {
+        pageTitle.value = appName || '';
+      }
     },
     { immediate: true }
   );
