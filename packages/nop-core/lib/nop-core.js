@@ -4,7 +4,7 @@ import { shallowRef, toRaw, ref } from "vue";
 import LRUCache from "lru-cache";
 import { cloneDeep, isNumber, isInteger, isBoolean, omit } from "lodash-es";
 import axios from "axios";
-import { isObject, isArray, isPromise, isString, isPlainObject } from "@vue/shared";
+import { isArray, isPromise, isObject, isString, isPlainObject } from "@vue/shared";
 import "systemjs/dist/system.js";
 function default_jumpTo(router, to) {
   if (to.startsWith("open://")) {
@@ -386,13 +386,7 @@ function _processXuiDirective(json, typeProp, processor, futures) {
     }
     return json2;
   }
-  if (isObject(json)) {
-    let type = json[typeProp];
-    if (type) {
-      return processor(type, json, processProps);
-    }
-    processProps(json);
-  } else if (isArray(json)) {
+  if (isArray(json)) {
     for (let i = 0, n = json.length; i < n; i++) {
       let child = _processXuiDirective(json[i], typeProp, processor, futures);
       if (child === void 0) {
@@ -415,6 +409,12 @@ function _processXuiDirective(json, typeProp, processor, futures) {
         }
       }
     }
+  } else if (isObject(json)) {
+    let type = json[typeProp];
+    if (type) {
+      return processor(type, json, processProps);
+    }
+    processProps(json);
   }
   return json;
 }
@@ -437,9 +437,7 @@ function processXuiValue(json, processor) {
     }
     return json2;
   }
-  if (isObject(json)) {
-    processProps(json);
-  } else if (isArray(json)) {
+  if (isArray(json)) {
     for (let i = 0, n = json.length; i < n; i++) {
       let child = json[i];
       if (isString(child)) {
@@ -455,6 +453,8 @@ function processXuiValue(json, processor) {
         processXuiValue(child, processor);
       }
     }
+  } else if (isObject(json)) {
+    processProps(json);
   }
   return json;
 }
@@ -1030,7 +1030,13 @@ function argQuery(data, arg, options) {
     };
     for (let k in data2) {
       if (k.startsWith("filter_")) {
-        let [name, op] = k.substring("filter_".length).split("__");
+        let name = k.substring("filter_".length);
+        let op = "eq";
+        let pos = name.lastIndexOf("__");
+        if (pos > 0) {
+          op = name.substring(pos + 2);
+          name = name.substring(0, pos);
+        }
         op = op || "eq";
         let value = data2[k];
         if (value == null || value == "")

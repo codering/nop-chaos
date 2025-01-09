@@ -58,7 +58,7 @@
   import { getFileAccessHttpUrl } from '/@/utils/common/compUtils';
   import { PageApis, clearLocalCache } from '@nop-chaos/sdk';
 
-  type MenuEvent = 'logout' | 'doc' | 'lock' | 'cache' | 'depart';
+  type MenuEvent = 'logout' | 'doc' | 'lock' | 'cache' | 'depart' | 'account' | 'password';
   const { createMessage } = useMessage();
   export default defineComponent({
     name: 'UserDropdown',
