@@ -11,12 +11,12 @@
 
     <template #overlay>
       <Menu @click="handleMenuClick">
-        <MenuDivider />
-        <MenuItem key="account" :text="t('layout.header.dropdownItemSwitchAccount')" icon="ant-design:setting-outlined" />
+        <!-- <MenuDivider /> -->
+        <!-- <MenuItem key="account" :text="t('layout.header.dropdownItemSwitchAccount')" icon="ant-design:setting-outlined" /> -->
         <MenuItem key="password" :text="t('layout.header.dropdownItemSwitchPassword')" icon="ant-design:edit-outlined" />
         <!-- <MenuItem key="depart" :text="t('layout.header.dropdownItemSwitchDepart')" icon="ant-design:cluster-outlined" /> -->
         <MenuDivider />
-        <MenuItem key="cache" :text="t('layout.header.dropdownItemRefreshCache')" icon="ion:sync-outline" />
+        <MenuItem v-if="supportDebug" key="cache" :text="t('layout.header.dropdownItemRefreshCache')" icon="ion:sync-outline" />
         <!-- <MenuItem
             v-if="getUseLockPage"
             key="lock"
@@ -56,7 +56,7 @@
   // import { DB_DICT_DATA_KEY } from '/src/enums/cacheEnum';
   // import { removeAuthCache, setAuthCache } from '/src/utils/auth';
   import { getFileAccessHttpUrl } from '/@/utils/common/compUtils';
-  import { PageApis, clearLocalCache } from '@nop-chaos/sdk';
+  import { PageApis, clearLocalCache, useDebug } from '@nop-chaos/sdk';
 
   type MenuEvent = 'logout' | 'doc' | 'lock' | 'cache' | 'depart' | 'account' | 'password';
   const { createMessage } = useMessage();
@@ -78,6 +78,7 @@
       const { prefixCls } = useDesign('header-user-dropdown');
       const { t } = useI18n();
       const { getShowDoc, getUseLockPage } = useHeaderSetting();
+      const { supportDebug } = useDebug();
       const userStore = useUserStore();
       const go = useGo();
 
@@ -158,7 +159,7 @@
             updateCurrentDepart();
             break;
           case 'password':
-            updatePassword();
+            go(`/sys/user-setting?tabKey=0`);
             break;
           case 'account':
             go(`/page-demo/account/setting`);
@@ -169,6 +170,7 @@
       return {
         prefixCls,
         t,
+        supportDebug,
         getUserInfo,
         getAvatarUrl,
         handleMenuClick,
