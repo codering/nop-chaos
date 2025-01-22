@@ -98,7 +98,7 @@ export function getUserInfo() {
   }
 
   return ajaxRequest({
-    url: '@query:LoginApi__getLoginUserInfo/username:userName,realname:nickName',
+    url: '@query:LoginApi__getLoginUserInfo/username:userName,realname:nickName,roles: roleInfos {value: roleId}',
     data: {
       accessToken: getToken(),
     },
